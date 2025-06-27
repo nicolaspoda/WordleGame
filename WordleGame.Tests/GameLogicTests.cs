@@ -6,31 +6,31 @@ namespace WordleGame.Tests
     public class GameLogicTests
     {
         [Test]
-        public void CheckGuess_AllCorrect()
+        public void ExactMatch_ShouldReturnAllGreen()
         {
-            var result = GameLogic.CheckGuess("APPLE", "APPLE");
+            string result = GameLogic.CheckGuess("APPLE", "APPLE");
             Assert.That(result, Is.EqualTo("🟩🟩🟩🟩🟩"));
         }
 
         [Test]
-        public void CheckGuess_AllIncorrect()
+        public void PartialMatch_ShouldReturnCorrectFeedback()
         {
-            var result = GameLogic.CheckGuess("ZZZZZ", "APPLE");
+            string result = GameLogic.CheckGuess("PLANE", "APPLE");
+            Assert.That(result, Is.EqualTo("🟨🟨🟨⬜🟩"));
+        }
+
+        [Test]
+        public void NoMatch_ShouldReturnAllGray()
+        {
+            string result = GameLogic.CheckGuess("CRANE", "BOOST");
             Assert.That(result, Is.EqualTo("⬜⬜⬜⬜⬜"));
         }
 
         [Test]
-        public void CheckGuess_SomeCorrectPositions()
+        public void MixedMatch_ShouldHandleMultipleLettersCorrectly()
         {
-            var result = GameLogic.CheckGuess("APRIL", "APPLE");
-            Assert.That(result, Is.EqualTo("🟩🟩⬜⬜🟨"));
-        }
-
-        [Test]
-        public void CheckGuess_DuplicateLettersHandled()
-        {
-            var result = GameLogic.CheckGuess("ALLEY", "APPLE");
-            Assert.That(result, Is.EqualTo("🟩🟨⬜🟨⬜"));
+            string result = GameLogic.CheckGuess("LEVEL", "HELLO");
+            Assert.That(result, Is.EqualTo("🟨🟩⬜⬜🟨"));
         }
     }
 }

@@ -103,3 +103,4 @@
 /Users/nicolaspoda/Desktop/Cours/MethodoTests/WordleGame/WordleGame.Tests/obj/Debug/net8.0/WordleGame.Tests.pdb
 /Users/nicolaspoda/Desktop/Cours/MethodoTests/WordleGame/WordleGame.Tests/obj/Debug/net8.0/WordleGame.Tests.genruntimeconfig.cache
 /Users/nicolaspoda/Desktop/Cours/MethodoTests/WordleGame/WordleGame.Tests/obj/Debug/net8.0/ref/WordleGame.Tests.dll
+/Users/nicolaspoda/Desktop/Cours/MethodoTests/WordleGame/WordleGame.Tests/obj/Debug/net8.0/WordleGame.Tests.sourcelink.json

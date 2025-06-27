@@ -15,7 +15,6 @@ namespace WordleGame.App
         public GameMode Mode { get; }
         public int MaxAttempts { get; }
         private readonly List<string> dictionary;
-        private readonly DateTime startTime;
         public DateTime StartTime { get; set; }
 
         public GameState(int wordLength = 5, GameMode mode = GameMode.Normal)
@@ -39,7 +38,6 @@ namespace WordleGame.App
             TargetWord = dictionary[random.Next(dictionary.Count)];
             CurrentAttempt = 0;
             HasWon = false;
-            startTime = DateTime.Now;
         }
 
         public bool IsWordInDictionary(string word)
@@ -62,7 +60,7 @@ namespace WordleGame.App
 
         public bool IsTimedOut()
         {
-            return Mode == GameMode.Timed && (DateTime.Now - startTime).TotalSeconds >= 60;
+            return Mode == GameMode.Timed && (DateTime.Now - StartTime).TotalSeconds >= 60;
         }
     }
 }

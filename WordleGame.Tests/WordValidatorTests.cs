@@ -14,7 +14,13 @@ namespace WordleGame.Tests
         [Test]
         public void WordTooShort_ShouldReturnFalse()
         {
-            Assert.That(WordValidator.ValidateWord("APP", 3), Is.False);
+            Assert.That(WordValidator.ValidateWord("APP", 5), Is.False);
+        }
+
+        [Test]
+        public void WordTooLong_ShouldReturnFalse()
+        {
+            Assert.That(WordValidator.ValidateWord("APPLES", 5), Is.False);
         }
 
         [Test]
@@ -26,7 +32,7 @@ namespace WordleGame.Tests
         [Test]
         public void EmptyWord_ShouldReturnFalse()
         {
-            Assert.That(WordValidator.ValidateWord("", 0), Is.False);
+            Assert.That(WordValidator.ValidateWord("", 5), Is.False);
         }
     }
 }
