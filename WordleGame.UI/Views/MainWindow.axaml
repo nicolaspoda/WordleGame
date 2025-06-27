@@ -1,0 +1,25 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="WordleGame.UI.Views.MainWindow"
+        Width="400" Height="500"
+        Title="Wordle Game">
+
+
+    <StackPanel Margin="20" VerticalAlignment="Top" Spacing="10">
+
+        <TextBlock Text="Wordle Game" FontSize="24" HorizontalAlignment="Center"/>
+
+        <TextBlock Text="Enter a 5-letter word:" FontSize="16"/>
+
+        <TextBox Name="GuessInput" Width="200" HorizontalAlignment="Center"/>
+
+        <Button Content="Check" Width="100" HorizontalAlignment="Center" Click="OnCheckClick"/>
+
+        <Button Content="Restart Stats" Width="120" HorizontalAlignment="Center" Click="OnRestartStatsClick"/>
+
+        <TextBlock Name="FeedbackText" FontSize="18" HorizontalAlignment="Center" TextAlignment="Center"/>
+
+        <TextBlock Name="AttemptsText" FontSize="14" HorizontalAlignment="Center"/>
+
+    </StackPanel>
+</Window>

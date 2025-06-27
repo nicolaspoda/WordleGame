@@ -1,0 +1,15 @@
+/Users/nicolaspoda/Desktop/Cours/MethodoTests/WordleGame/WordleGame.App/obj/Debug/net8.0/WordleGame.App.GeneratedMSBuildEditorConfig.editorconfig
+/Users/nicolaspoda/Desktop/Cours/MethodoTests/WordleGame/WordleGame.App/obj/Debug/net8.0/WordleGame.App.AssemblyInfoInputs.cache
+/Users/nicolaspoda/Desktop/Cours/MethodoTests/WordleGame/WordleGame.App/obj/Debug/net8.0/WordleGame.App.AssemblyInfo.cs
+/Users/nicolaspoda/Desktop/Cours/MethodoTests/WordleGame/WordleGame.App/obj/Debug/net8.0/WordleGame.App.csproj.CoreCompileInputs.cache
+/Users/nicolaspoda/Desktop/Cours/MethodoTests/WordleGame/WordleGame.App/bin/Debug/net8.0/WordleGame.App
+/Users/nicolaspoda/Desktop/Cours/MethodoTests/WordleGame/WordleGame.App/bin/Debug/net8.0/WordleGame.App.deps.json
+/Users/nicolaspoda/Desktop/Cours/MethodoTests/WordleGame/WordleGame.App/bin/Debug/net8.0/WordleGame.App.runtimeconfig.json
+/Users/nicolaspoda/Desktop/Cours/MethodoTests/WordleGame/WordleGame.App/bin/Debug/net8.0/WordleGame.App.dll
+/Users/nicolaspoda/Desktop/Cours/MethodoTests/WordleGame/WordleGame.App/bin/Debug/net8.0/WordleGame.App.pdb
+/Users/nicolaspoda/Desktop/Cours/MethodoTests/WordleGame/WordleGame.App/obj/Debug/net8.0/WordleGame.App.dll
+/Users/nicolaspoda/Desktop/Cours/MethodoTests/WordleGame/WordleGame.App/obj/Debug/net8.0/refint/WordleGame.App.dll
+/Users/nicolaspoda/Desktop/Cours/MethodoTests/WordleGame/WordleGame.App/obj/Debug/net8.0/WordleGame.App.pdb
+/Users/nicolaspoda/Desktop/Cours/MethodoTests/WordleGame/WordleGame.App/obj/Debug/net8.0/WordleGame.App.genruntimeconfig.cache
+/Users/nicolaspoda/Desktop/Cours/MethodoTests/WordleGame/WordleGame.App/obj/Debug/net8.0/ref/WordleGame.App.dll
+/Users/nicolaspoda/Desktop/Cours/MethodoTests/WordleGame/WordleGame.App/bin/Debug/net8.0/Dictionary.txt
