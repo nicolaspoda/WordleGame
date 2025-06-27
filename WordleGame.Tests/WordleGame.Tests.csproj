@@ -24,5 +24,10 @@
   <ItemGroup>
     <ProjectReference Include="..\WordleGame.App\WordleGame.App.csproj" />
   </ItemGroup>
+<ItemGroup>
+  <None Update="Dictionary.txt">
+    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+  </None>
+</ItemGroup>
 
 </Project>

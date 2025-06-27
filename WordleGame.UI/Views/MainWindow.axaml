@@ -10,6 +10,19 @@
         <TextBlock Text="Wordle Game" FontSize="24" HorizontalAlignment="Center"/>
 
         <TextBlock Text="Enter a 5-letter word:" FontSize="16"/>
+<TextBlock Text="Select word length:" FontSize="16"/>
+<ComboBox Name="WordLengthSelector" Width="100" SelectedIndex="0">
+    <ComboBoxItem Content="5"/>
+    <ComboBoxItem Content="6"/>
+    <ComboBoxItem Content="7"/>
+</ComboBox>
+
+<TextBlock Text="Select game mode:" FontSize="16"/>
+<ComboBox Name="GameModeSelector" Width="150" SelectedIndex="0">
+    <ComboBoxItem Content="Normal"/>
+    <ComboBoxItem Content="Timed"/>
+    <ComboBoxItem Content="Practice"/>
+</ComboBox>
 
         <TextBox Name="GuessInput" Width="200" HorizontalAlignment="Center"/>
 

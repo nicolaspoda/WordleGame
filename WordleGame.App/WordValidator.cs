@@ -1,9 +1,12 @@
-namespace WordleGame.App;
+using System.Linq;
 
-public static class WordValidator
+namespace WordleGame.App
 {
-    public static bool ValidateWord(string word)
+    public static class WordValidator
     {
-        return !string.IsNullOrEmpty(word) && word.Length == 5 && word.All(char.IsLetter);
+        public static bool ValidateWord(string word, int wordLength)
+        {
+            return word.Length == wordLength && word.All(char.IsLetter);
+        }
     }
 }

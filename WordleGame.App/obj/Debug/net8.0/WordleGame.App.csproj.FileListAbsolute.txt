@@ -13,3 +13,4 @@
 /Users/nicolaspoda/Desktop/Cours/MethodoTests/WordleGame/WordleGame.App/obj/Debug/net8.0/WordleGame.App.genruntimeconfig.cache
 /Users/nicolaspoda/Desktop/Cours/MethodoTests/WordleGame/WordleGame.App/obj/Debug/net8.0/ref/WordleGame.App.dll
 /Users/nicolaspoda/Desktop/Cours/MethodoTests/WordleGame/WordleGame.App/bin/Debug/net8.0/Dictionary.txt
+/Users/nicolaspoda/Desktop/Cours/MethodoTests/WordleGame/WordleGame.App/obj/Debug/net8.0/WordleGame.App.sourcelink.json

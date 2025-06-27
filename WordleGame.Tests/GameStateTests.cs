@@ -10,7 +10,7 @@ namespace WordleGame.Tests
         [SetUp]
         public void Setup()
         {
-            game = new GameState("APPLE");
+            game = new GameState(5);
         }
 
         [Test]

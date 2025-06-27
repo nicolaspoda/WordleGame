@@ -10,8 +10,9 @@
 
 <ItemGroup>
   <None Update="Dictionary.txt">
-    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
   </None>
 </ItemGroup>
+
 
 </Project>

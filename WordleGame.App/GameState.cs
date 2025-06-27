@@ -1,48 +1,68 @@
-namespace WordleGame.App;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
-public class GameState
+namespace WordleGame.App
 {
-    public string TargetWord { get; }
-    public int MaxAttempts { get; } = 6;
-    public int CurrentAttempt { get; private set; }
-    public bool HasWon { get; private set; }
-    public bool IsGameOver => HasWon || CurrentAttempt >= MaxAttempts;
-    private readonly List<string> Dictionary;
-
-    public GameState()
+    public class GameState
     {
-        var path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Dictionary.txt");
-        Dictionary = File.ReadAllLines(path).Select(w => w.ToUpper()).ToList();
-        var rnd = new Random();
-        TargetWord = Dictionary[rnd.Next(Dictionary.Count)];
-    }
+        public string TargetWord { get; }
+        public int CurrentAttempt { get; private set; }
+        public bool IsGameOver => CurrentAttempt >= MaxAttempts || HasWon;
+        public bool HasWon { get; private set; }
+        public int WordLength { get; }
+        public GameMode Mode { get; }
+        public int MaxAttempts { get; }
+        private readonly List<string> dictionary;
+        private readonly DateTime startTime;
+        public DateTime StartTime { get; set; }
 
-    public GameState(string forcedWord)
-    {
-        Dictionary = File.ReadAllLines(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Dictionary.txt"))
-                         .Select(w => w.ToUpper()).ToList();
-        TargetWord = forcedWord.ToUpper();
-    }
-
-
-
-
-    public bool IsWordInDictionary(string word)
-    {
-        return Dictionary.Contains(word.ToUpper());
-    }
-
-    public string MakeGuess(string guess)
-    {
-        CurrentAttempt++;
-
-        var feedback = GameLogic.CheckGuess(guess.ToUpper(), TargetWord);
-
-        if (guess.ToUpper() == TargetWord)
+        public GameState(int wordLength = 5, GameMode mode = GameMode.Normal)
         {
-            HasWon = true;
+            WordLength = wordLength;
+            Mode = mode;
+            StartTime = DateTime.Now;
+            MaxAttempts = (mode == GameMode.Practice) ? 999 : 6;
+
+            var dictionaryPath = Path.Combine(AppContext.BaseDirectory, "Dictionary.txt");
+            dictionary = File.ReadAllLines(dictionaryPath)
+                .Where(w => w.Length == wordLength)
+                .Select(w => w.Trim().ToUpper())
+                .ToList();
+
+
+            if (!dictionary.Any())
+                throw new Exception($"No words found with length {wordLength}");
+
+            var random = new Random();
+            TargetWord = dictionary[random.Next(dictionary.Count)];
+            CurrentAttempt = 0;
+            HasWon = false;
+            startTime = DateTime.Now;
         }
 
-        return feedback;
+        public bool IsWordInDictionary(string word)
+        {
+            return dictionary.Contains(word.ToUpper());
+        }
+
+        public string MakeGuess(string guess)
+        {
+            guess = guess.ToUpper();
+            if (guess == TargetWord)
+            {
+                HasWon = true;
+            }
+
+            var feedback = GameLogic.CheckGuess(guess, TargetWord);
+            CurrentAttempt++;
+            return feedback;
+        }
+
+        public bool IsTimedOut()
+        {
+            return Mode == GameMode.Timed && (DateTime.Now - startTime).TotalSeconds >= 60;
+        }
     }
 }

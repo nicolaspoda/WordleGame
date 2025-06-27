@@ -19,7 +19,7 @@ class Program
             }
             input = input.ToUpper();
 
-            if (!WordValidator.ValidateWord(input))
+            if (!WordValidator.ValidateWord(input, 5))
             {
                 Console.WriteLine("Invalid word. It must be 5 letters.");
                 continue;

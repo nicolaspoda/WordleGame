@@ -79,3 +79,4 @@
 /Users/nicolaspoda/Desktop/Cours/MethodoTests/WordleGame/WordleGame.UI/bin/Debug/net8.0/WordleGame.App
 /Users/nicolaspoda/Desktop/Cours/MethodoTests/WordleGame/WordleGame.UI/bin/Debug/net8.0/WordleGame.App.dll
 /Users/nicolaspoda/Desktop/Cours/MethodoTests/WordleGame/WordleGame.UI/bin/Debug/net8.0/WordleGame.App.pdb
+/Users/nicolaspoda/Desktop/Cours/MethodoTests/WordleGame/WordleGame.UI/obj/Debug/net8.0/WordleGame.UI.sourcelink.json
