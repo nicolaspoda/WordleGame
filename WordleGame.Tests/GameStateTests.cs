@@ -12,14 +12,12 @@ namespace WordleGame.Tests
         [SetUp]
         public void Setup()
         {
-            // Créer un dictionnaire temporaire pour les tests
             File.WriteAllLines(TempDictionaryFile, new[] { "APPLE", "PLANE", "GUITAR", "PUZZLE" });
         }
 
         [TearDown]
         public void Teardown()
         {
-            // Nettoyer le fichier temporaire
             if (File.Exists(TempDictionaryFile))
                 File.Delete(TempDictionaryFile);
         }
@@ -38,7 +36,6 @@ namespace WordleGame.Tests
         {
             var game = new GameState(5, GameMode.Normal);
             game = new GameState(5, GameMode.Normal);
-            // Forcer le mot cible pour test
             var targetWord = "APPLE";
             typeof(GameState)
                 .GetField("<TargetWord>k__BackingField", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)

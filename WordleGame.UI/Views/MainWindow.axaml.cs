@@ -35,7 +35,7 @@ public partial class MainWindow : Window
     {
         if (game.IsTimedOut())
         {
-            FeedbackText.Text = $"⏰ Time's up! The word was {game.TargetWord}.";
+            FeedbackText.Text = $"Time's up! The word was {game.TargetWord}.";
             stats.RegisterLoss(game.Mode);
             ShowMessage($"Time's up! The word was {game.TargetWord}.");
             ResetGame();
@@ -46,13 +46,13 @@ public partial class MainWindow : Window
 
         if (string.IsNullOrWhiteSpace(guess) || !WordValidator.ValidateWord(guess, game.WordLength))
         {
-            FeedbackText.Text = $"❌ Invalid word ({game.WordLength} letters).";
+            FeedbackText.Text = $"Invalid word ({game.WordLength} letters).";
             return;
         }
 
         if (!game.IsWordInDictionary(guess))
         {
-            FeedbackText.Text = "❌ Word not in dictionary.";
+            FeedbackText.Text = "Word not in dictionary.";
             return;
         }
 
@@ -62,14 +62,14 @@ public partial class MainWindow : Window
 
         if (game.HasWon)
         {
-            FeedbackText.Text = "🎉 Congratulations! You found the word!";
+            FeedbackText.Text = "Congratulations! You found the word!";
             stats.RegisterWin(game.CurrentAttempt + 1, game.Mode);
-            ShowMessage($"🎉 You found the word {game.TargetWord}!");
+            ShowMessage($"You found the word {game.TargetWord}!");
             ResetGame();
         }
         else if (game.IsGameOver || game.IsTimedOut())
         {
-            FeedbackText.Text = $"❌ Game Over. The word was {game.TargetWord}.";
+            FeedbackText.Text = $"Game Over. The word was {game.TargetWord}.";
             stats.RegisterLoss(game.Mode);
             ShowMessage($"Game Over. The word was {game.TargetWord}.");
             ResetGame();
