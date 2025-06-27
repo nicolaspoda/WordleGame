@@ -7,7 +7,6 @@ using System;
 using System.Linq;
 using WordleGame.App;
 
-
 namespace WordleGame.UI.Views;
 
 public partial class MainWindow : Window
@@ -59,7 +58,6 @@ public partial class MainWindow : Window
 
         var feedback = game.MakeGuess(guess);
         FeedbackText.Text = feedback;
-        DisplayFeedback(feedback);
         UpdateAttempts();
 
         if (game.HasWon)
@@ -80,41 +78,6 @@ public partial class MainWindow : Window
         GuessInput.Text = string.Empty;
     }
 
-    private void DisplayFeedback(string feedback)
-    {
-        FeedbackPanel.Children.Clear();
-
-        foreach (char c in feedback)
-        {
-            var border = new Border
-            {
-                Width = 40,
-                Height = 40,
-                BorderBrush = Brushes.White,
-                BorderThickness = new Thickness(2),
-                Margin = new Thickness(2),
-                Child = new TextBlock
-                {
-                    Text = c.ToString(),
-                    Foreground = Brushes.White,
-                    FontSize = 20,
-                    HorizontalAlignment = HorizontalAlignment.Center,
-                    VerticalAlignment = VerticalAlignment.Center
-                }
-            };
-
-            border.Background = c.ToString() switch
-            {
-                "🟩" => Brushes.Green,
-                "🟨" => Brushes.Gold,
-                "⬜" => Brushes.Gray,
-                _ => Brushes.Transparent
-            };
-
-
-            FeedbackPanel.Children.Add(border);
-        }
-    }
 
 
     private async void ShowMessage(string message)

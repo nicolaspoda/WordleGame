@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WordleGame.App")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ab380568ef14e9ec6c3f0fff6193505cabd6f003")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+389319470573f33d2afc1cfd7b03951eb0933674")]
 [assembly: System.Reflection.AssemblyProductAttribute("WordleGame.App")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WordleGame.App")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
