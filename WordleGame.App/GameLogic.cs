@@ -4,13 +4,14 @@ public class GameLogic
 {
     public static string CheckGuess(string guess, string target)
     {
-        string[] feedback = new string[5];
+        int length = guess.Length;
+        string[] feedback = new string[length];
         var targetChars = target.ToCharArray();
         var guessChars = guess.ToCharArray();
 
-        bool[] matched = new bool[5];
+        bool[] matched = new bool[length];
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < length; i++)
         {
             if (guessChars[i] == targetChars[i])
             {
@@ -20,7 +21,7 @@ public class GameLogic
             }
         }
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < length; i++)
         {
             if (feedback[i] == "🟩") continue;
 

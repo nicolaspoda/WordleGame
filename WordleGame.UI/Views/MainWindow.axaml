@@ -1,38 +1,59 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         x:Class="WordleGame.UI.Views.MainWindow"
-        Width="400" Height="500"
-        Title="Wordle Game">
+        Title="Wordle Game" Width="600" Height="500" Background="Black">
+
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
+        
+        <TextBlock Name="InstructionText"
+                   Text="Enter a 5-letter word:"
+                   FontSize="20"
+                   Foreground="White"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,20"/>
+
+        <TextBlock Text="Select word length:" Foreground="White"/>
+        <ComboBox Name="WordLengthSelector" Width="100">
+            <ComboBoxItem Content="5"/>
+            <ComboBoxItem Content="6"/>
+            <ComboBoxItem Content="7"/>
+        </ComboBox>
+
+        <TextBlock Text="Select game mode:" Foreground="White" Margin="0,10,0,0"/>
+        <ComboBox Name="GameModeSelector" Width="100">
+            <ComboBoxItem Content="Normal"/>
+            <ComboBoxItem Content="Timed"/>
+            <ComboBoxItem Content="Practice"/>
+        </ComboBox>
+
+        <TextBox Name="GuessInput"
+                 Width="300"
+                 Margin="0,10,0,0"/>
+
+        <Button Content="Check"
+                Click="OnCheckClick"
+                Width="100"
+                Margin="0,10,0,0"/>
+
+        <Button Content="Restart Stats"
+                Click="OnRestartStatsClick"
+                Width="150"
+                Margin="0,5,0,0"/>
+
+     <StackPanel Name="FeedbackPanel"
+            Orientation="Horizontal"
+            HorizontalAlignment="Center"
+            Margin="0,10,0,0"/>
 
 
-    <StackPanel Margin="20" VerticalAlignment="Top" Spacing="10">
+        <TextBlock Name="AttemptsText"
+                   Foreground="White"
+                   Margin="0,10,0,0"
+                   HorizontalAlignment="Center"/>
 
-        <TextBlock Text="Wordle Game" FontSize="24" HorizontalAlignment="Center"/>
-
-        <TextBlock Text="Enter a 5-letter word:" FontSize="16"/>
-<TextBlock Text="Select word length:" FontSize="16"/>
-<ComboBox Name="WordLengthSelector" Width="100" SelectedIndex="0">
-    <ComboBoxItem Content="5"/>
-    <ComboBoxItem Content="6"/>
-    <ComboBoxItem Content="7"/>
-</ComboBox>
-
-<TextBlock Text="Select game mode:" FontSize="16"/>
-<ComboBox Name="GameModeSelector" Width="150" SelectedIndex="0">
-    <ComboBoxItem Content="Normal"/>
-    <ComboBoxItem Content="Timed"/>
-    <ComboBoxItem Content="Practice"/>
-</ComboBox>
-
-        <TextBox Name="GuessInput" Width="200" HorizontalAlignment="Center"/>
-
-        <Button Content="Check" Width="100" HorizontalAlignment="Center" Click="OnCheckClick"/>
-
-        <Button Content="Restart Stats" Width="120" HorizontalAlignment="Center" Click="OnRestartStatsClick"/>
-
-        <TextBlock Name="FeedbackText" FontSize="18" HorizontalAlignment="Center" TextAlignment="Center"/>
-
-        <TextBlock Name="AttemptsText" FontSize="14" HorizontalAlignment="Center"/>
-
+        <TextBlock Name="FeedbackText"
+                   Foreground="Gold"
+                   HorizontalAlignment="Center"
+                   Margin="0,5,0,0"/>
     </StackPanel>
 </Window>
