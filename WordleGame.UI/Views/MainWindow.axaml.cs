@@ -6,6 +6,7 @@ using Avalonia.Layout;
 using System;
 using System.Linq;
 using WordleGame.App;
+using Avalonia.Threading;
 
 namespace WordleGame.UI.Views;
 
@@ -13,6 +14,7 @@ public partial class MainWindow : Window
 {
     private GameState game = null!;
     private GameStats stats = new();
+    private DispatcherTimer? countdownTimer;
 
     public MainWindow()
     {
@@ -78,6 +80,36 @@ public partial class MainWindow : Window
         GuessInput.Text = string.Empty;
     }
 
+private void StartOrStopTimer()
+{
+    countdownTimer?.Stop();
+
+    if (game.Mode != GameMode.Timed)
+        return;
+
+    countdownTimer = new DispatcherTimer
+    {
+        Interval = TimeSpan.FromSeconds(1)
+    };
+
+    countdownTimer.Tick += (_, _) =>
+    {
+        if (game.IsTimedOut())
+        {
+            countdownTimer.Stop();
+            FeedbackText.Text = $"⏰ Time's up! The word was {game.TargetWord}.";
+            stats.RegisterLoss(game.Mode);
+            ShowMessage($"Time's up! The word was {game.TargetWord}.");
+            ResetGame();
+        }
+        else
+        {
+            UpdateAttempts(); 
+        }
+    };
+
+    countdownTimer.Start();
+}
 
 
     private async void ShowMessage(string message)
@@ -86,20 +118,23 @@ public partial class MainWindow : Window
     }
 
     private void ResetGame()
+{
+    try
     {
-        try
-        {
-            game = new GameState(GetSelectedWordLength(), GetSelectedGameMode());
-            FeedbackText.Text = string.Empty;
-            GuessInput.Text = string.Empty;
-            FeedbackPanel.Children.Clear();
-            UpdateAttempts();
-        }
-        catch (Exception ex)
-        {
-            FeedbackText.Text = ex.Message;
-        }
+        game = new GameState(GetSelectedWordLength(), GetSelectedGameMode());
+        FeedbackText.Text = string.Empty;
+        GuessInput.Text = string.Empty;
+        FeedbackPanel.Children.Clear();
+        UpdateAttempts();
+
+        StartOrStopTimer(); 
     }
+    catch (Exception ex)
+    {
+        FeedbackText.Text = ex.Message;
+    }
+}
+
 
     private void OnRestartStatsClick(object? sender, RoutedEventArgs e)
     {
