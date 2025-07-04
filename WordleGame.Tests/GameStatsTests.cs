@@ -54,5 +54,13 @@ namespace WordleGame.Tests
             Assert.That(stats.AttemptsList.Count, Is.EqualTo(0));
             Assert.That(stats.TotalScore, Is.EqualTo(0));
         }
+
+        [Test]
+public void AverageAttempts_ShouldReturnZero_WhenNoAttempts()
+{
+    var stats = new GameStats();
+    Assert.That(stats.AverageAttempts(), Is.EqualTo(0));
+}
+
     }
 }

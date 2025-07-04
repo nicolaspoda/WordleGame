@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 namespace WordleGame.App;
-
+[ExcludeFromCodeCoverage]
 class Program
 {
     static void Main()

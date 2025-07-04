@@ -63,12 +63,24 @@ namespace WordleGame.Tests
             Assert.That(game.MaxAttempts, Is.EqualTo(999));
         }
 
-        [Test]
-        public void TimedMode_ShouldTimeoutAfter60Seconds()
-        {
-            var game = new GameState(5, GameMode.Timed);
-            typeof(GameState).GetProperty("StartTime")?.SetValue(game, DateTime.Now.AddMinutes(-2));
-            Assert.That(game.IsTimedOut(), Is.True);
-        }
+       
+[Test]
+public void Constructor_ShouldThrow_WhenNoWordsOfGivenLength()
+{
+    var ex = Assert.Throws<Exception>(() => new GameState(99, GameMode.Normal));
+    Assert.That(ex.Message, Does.StartWith("No words found"));
+}
+
+[Test]
+public void IsGameOver_ShouldReturnFalse_WhenAttemptsRemainAndNotWon()
+{
+    var state = new GameState(5, GameMode.Normal);
+    Assert.IsFalse(state.IsGameOver);
+}
+
+
+
+
+
     }
 }

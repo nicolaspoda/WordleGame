@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ATgMfPeXs0w=",
+  "dgSpecHash": "AiE628Di9l0=",
   "success": true,
   "projectFilePath": "/Users/nicolaspoda/Desktop/Cours/MethodoTests/WordleGame/WordleGame.Tests/WordleGame.Tests.csproj",
   "expectedPackageFiles": [
-    "/Users/nicolaspoda/.nuget/packages/coverlet.collector/6.0.0/coverlet.collector.6.0.0.nupkg.sha512",
+    "/Users/nicolaspoda/.nuget/packages/coverlet.collector/6.0.4/coverlet.collector.6.0.4.nupkg.sha512",
     "/Users/nicolaspoda/.nuget/packages/microsoft.codecoverage/17.8.0/microsoft.codecoverage.17.8.0.nupkg.sha512",
     "/Users/nicolaspoda/.nuget/packages/microsoft.net.test.sdk/17.8.0/microsoft.net.test.sdk.17.8.0.nupkg.sha512",
     "/Users/nicolaspoda/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
